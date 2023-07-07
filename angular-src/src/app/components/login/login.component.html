@@ -1,0 +1,20 @@
+<section class="login" id="login">
+
+  <h1 class="heading"><span>Welcome </span>Back</h1>
+
+  <div class="row">
+
+      <div class="image">
+          <img src="../../../assets/images/Schedule.gif" alt="">
+      </div>
+
+      <form (submit)="login()">
+        <h3>Login</h3>
+        <input type="text" placeholder="Your name" class="box" [(ngModel)]="username" name="username" required>
+        <input type="text" placeholder="Your password" class="box" [(ngModel)]="password" name="password" required>
+      
+        <input type="submit" value="Login" class="btn">
+      </form>
+      
+  </div>
+</section>

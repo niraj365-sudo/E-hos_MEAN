@@ -1,0 +1,29 @@
+<!-- upload-reports.component.html -->
+<section class="book" id="book">
+  <h1 class="heading"><span>Upload</span> Report</h1>
+  <div class="row">
+    <div class="image">
+      <img src="../../../assets/images/Schedule.gif" alt="">
+    </div>
+    <form (submit)="upload()">
+      <h3>Upload Report</h3>
+      <input type="text" name="title" id="title" placeholder="Type report name or its description" class="box" [(ngModel)]="title" required>
+      <div class="container">
+        <div class="button-wrap">
+          <label class="button" for="upload">Upload File</label>
+          <input id="upload" type="file"  (change)="onFileChange($event)" required>
+        </div>
+      </div>
+      <div *ngIf="selectedFile">
+        <h4>Preview:</h4>
+        <div class="image-container">
+          <button class="cancel-button" (click)="cancel()">
+            <i class="fas fa-times"></i>
+          </button>
+          <img [src]="previewImage" alt="Preview Image" class="preview-image">
+        </div>
+      </div>
+      <input type="submit" value="Upload" class="btn">
+    </form>
+  </div>
+</section>

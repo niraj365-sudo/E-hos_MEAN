@@ -1,0 +1,31 @@
+<header class="header">
+    <a href="#" class="logo"><i class="fas fa-heartbeat"></i> medcare.</a>
+
+    <nav class="navbar" >
+        <a href="#home" *ngIf="userRole === '' ">home</a>
+        <a href="#services" *ngIf="userRole === '' ">services</a>
+        <a href="#about" *ngIf="userRole === '' " >about</a>
+        <a href="#doctors" *ngIf="userRole === '' ">doctors</a>
+        <a href="#book" *ngIf="userRole === '' ">book</a>
+        <a href="#review" *ngIf="userRole === '' ">review</a>
+        <a href="#blogs" *ngIf="userRole === '' ">blogs</a>
+
+        <a href="/patient/view-doctors" *ngIf="userRole === 'patient'">View Doctor</a>
+        <a href="#upload-report" *ngIf="userRole === 'patient'" class="dropdown">
+            Report
+            <div class="dropdown-items">
+                <ul class="nav-menu">
+                    <li><a routerLink="/patient/upload-report">Upload Report</a></li>
+                    <li><a routerLink="/patient/my-uploads">My Uploads</a></li>
+                    <li><a routerLink="/patient/hospital-uploads">My Appointment</a></li>
+                  </ul>
+            </div>
+          </a>
+               
+        <a href="#hospital-uploads" *ngIf="userRole === 'patient'">Hospital Uploads</a>
+        <a *ngIf="userRole === 'patient'" (click)="logout()">Logout</a>
+
+    </nav>
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+</header>

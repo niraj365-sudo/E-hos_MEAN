@@ -1,0 +1,25 @@
+    <!-- doctor section starts -->
+    <section class="reports" id="reports">
+        <h1 class="heading">My <span>Uploads</span></h1>
+        <div *ngIf="reports.length > 0; else noReports">
+            <div class="box-container"  *ngFor="let report of reports" >
+                <div class="box">
+                    <a [href]="report.imageUrl" target="_blank">
+                        <img [src]="report.imageUrl" alt="">
+                    </a>
+                    <h3>Title: <span>{{ report.title }}</span> </h3>
+                    <h5>Uploaded On: {{report.date | date: 'medium'}}</h5>
+                    <h5>Uploaded by: {{user.username}}</h5>
+                </div>
+            </div>
+        </div>
+
+        <ng-template #noReports>
+            <div class="box-container no-reports-animation">
+                <div class="box">
+                    <h3>Oops! No report has been uploaded yet...</h3>
+                </div>
+            </div>
+        </ng-template>
+    </section>
+    <!-- doctor section ends -->
